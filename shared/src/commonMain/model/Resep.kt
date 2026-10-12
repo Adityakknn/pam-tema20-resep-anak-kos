@@ -7,4 +7,5 @@ data class Resep(
     val fotoUrl: String?,
     val status: StatusResep,
     val daftarBahan: List<Bahan>
+    val daftarAlat: list<Alat>
 )
