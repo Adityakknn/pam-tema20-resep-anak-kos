@@ -18,9 +18,10 @@ import org.jetbrains.compose.resources.painterResource
 
 import pamtema20resepanakkos.shared.generated.resources.Res
 import pamtema20resepanakkos.shared.generated.resources.compose_multiplatform
+import pam_tema20_resep_anak_kos.UI.LayarUtama
 
 @Composable
 @Preview
 fun App() = MaterialTheme {
-    LayarUtama(dataContoh)
+    LayarUtama()
 }

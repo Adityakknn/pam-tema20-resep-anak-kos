@@ -1,4 +1,4 @@
-package com.example.pam_tema20_resep_anak_kos.ui
+package com.example.pam_tema20_resep_anak_kos.UI
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
