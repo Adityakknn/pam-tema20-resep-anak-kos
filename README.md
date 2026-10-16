@@ -11,21 +11,22 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
     the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
     Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
     folder is the appropriate location.
+### Contributor
+Aditya Kristian Novalino_124140079 
+Galih Sigit Satrio_124140001 
+Jhon Kevin Tambun_124140073
 
-### Running the apps
+### Progress Tugas
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+Minggu 1:
+ *Membuat Repositories pam-tema20-resep-anak-kos
+  <img width="1917" height="1007" alt="PAM1" src="https://github.com/user-attachments/assets/48f8f82b-8e04-421a-8901-07b64c47a75d" />
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+Minggu 2:
+ *Membuat Data Class
+  <img width="1917" height="870" alt="PAM2" src="https://github.com/user-attachments/assets/f1c09d52-4126-4ffc-8f06-b8ea241e4d79" />
 
-### Running tests
+Minggu 3:
+ *Membuat Layar laporan dengan composable, modifier, dan LazyColumn
+  
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
-
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- iOS tests: `./gradlew :shared:iosSimulatorArm64Test`
-
----
-
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
