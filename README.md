@@ -28,5 +28,7 @@ Minggu 2:
 
 Minggu 3:
  *Membuat Layar laporan dengan composable, modifier, dan LazyColumn
+  <img width="365" height="820" alt="PAM3" src="https://github.com/user-attachments/assets/8290beab-2c51-4da3-b3f6-937f3d4d4b64" />
+
   
 
