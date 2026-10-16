@@ -1,3 +1,4 @@
+
 package com.example.pam_tema20_resep_anak_kos.model
 
 data class Resep(
@@ -8,6 +9,6 @@ data class Resep(
     val porsi: Int,
     val fotoUrl: String?,
     val status: StatusResep,
-    val daftarBahan: List<Bahan>
+    val daftarBahan: List<Bahan>,
     val daftarAlat: List<Alat>
 )
