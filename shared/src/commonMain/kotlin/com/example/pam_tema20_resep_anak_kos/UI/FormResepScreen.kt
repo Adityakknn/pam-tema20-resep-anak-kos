@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -23,9 +25,13 @@ fun FormResepScreen(
 ) {
     val state by vm.uiState.collectAsState()
 
-    Column(modifier = Modifier.padding(16.dp)) {
+    Column(
+        modifier = Modifier
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState())
+    ) {
         Text("Tambah Resep Anak Kos", style = MaterialTheme.typography.titleLarge)
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(Modifier.height(12.dp))
 
         KolomTeks(
             label = "Nama Resep",
@@ -33,7 +39,7 @@ fun FormResepScreen(
             onValueChange = vm::ubahNama,
             modifier = Modifier.fillMaxWidth()
         )
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(Modifier.height(8.dp))
 
         KolomTeks(
             label = "Deskripsi",
@@ -41,7 +47,7 @@ fun FormResepScreen(
             onValueChange = vm::ubahDeskripsi,
             modifier = Modifier.fillMaxWidth()
         )
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(Modifier.height(8.dp))
 
         KolomTeks(
             label = "Durasi (Menit)",
@@ -49,10 +55,42 @@ fun FormResepScreen(
             onValueChange = vm::ubahDurasi,
             modifier = Modifier.fillMaxWidth()
         )
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(Modifier.height(8.dp))
+
+        KolomTeks(
+            label = "Porsi",
+            value = state.porsi,
+            onValueChange = vm::ubahPorsi,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(Modifier.height(8.dp))
+
+        KolomTeks(
+            label = "Bahan (Nama, jumlah, satuan, harga)",
+            value = state.bahanTeks,
+            onValueChange = vm::ubahBahan,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Text(
+            "Contoh: Telur, 2, butir, 2500 (satu bahan per baris)",
+            style = MaterialTheme.typography.bodySmall
+        )
+        Spacer(Modifier.height(8.dp))
+
+        KolomTeks(
+            label = "Alat (satu per baris)",
+            value = state.alatTeks,
+            onValueChange = vm::ubahAlat,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Text(
+            "Contoh: Wajan  atau  Spatula, belum",
+            style = MaterialTheme.typography.bodySmall
+        )
+        Spacer(Modifier.height(16.dp))
 
         Button(
-            onClick = vm::simpanResep,
+            onClick = { vm.simpanResep(onSelesai = onKembali) },
             enabled = state.bisaSimpan,
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -60,15 +98,12 @@ fun FormResepScreen(
         }
 
         state.pesan?.let { pesan ->
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(text = pesan, color = MaterialTheme.colorScheme.primary)
+            Spacer(Modifier.height(8.dp))
+            Text(pesan, color = MaterialTheme.colorScheme.primary)
         }
 
-        Spacer(modifier = Modifier.height(8.dp))
-        OutlinedButton(
-            onClick = onKembali,
-            modifier = Modifier.fillMaxWidth()
-        ) {
+        Spacer(Modifier.height(8.dp))
+        OutlinedButton(onClick = onKembali, modifier = Modifier.fillMaxWidth()) {
             Text("Kembali")
         }
     }

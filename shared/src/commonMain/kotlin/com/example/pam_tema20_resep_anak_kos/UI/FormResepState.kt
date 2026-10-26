@@ -5,10 +5,15 @@ data class FormResepUiState(
     val deskripsi: String = "",
     val durasiMenit: String = "",
     val porsi: String = "",
+    val bahanTeks: String = "",   // satu bahan per baris
+    val alatTeks: String = "",    // satu alat per baris
     val sedangMengirim: Boolean = false,
     val pesan: String? = null
 ) {
-    // Validasi otomatis: tombol hanya bisa diklik jika nama & deskripsi terisi
     val bisaSimpan: Boolean
-        get() = nama.isNotBlank() && deskripsi.isNotBlank() && !sedangMengirim
+        get() = nama.isNotBlank() &&
+                deskripsi.isNotBlank() &&
+                (durasiMenit.toIntOrNull() ?: 0) > 0 &&
+                (porsi.toIntOrNull() ?: 0) > 0 &&
+                !sedangMengirim
 }
