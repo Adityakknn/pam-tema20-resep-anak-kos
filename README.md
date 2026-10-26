@@ -30,5 +30,14 @@ Minggu 3:
  *Membuat Layar laporan dengan composable, modifier, dan LazyColumn
   <img width="365" height="820" alt="PAM3" src="https://github.com/user-attachments/assets/8290beab-2c51-4da3-b3f6-937f3d4d4b64" />
 
+Minggu 4:
+  *Membuat MVVM
+  Kondisi Awal
+  <img width="557" height="913" alt="WhatsApp Image 2026-10-26 at 17 05 28" src="https://github.com/user-attachments/assets/576031c6-0e27-4aa8-8727-2488b267b5bb" />
+  Kondisi Pengisian
+  <img width="552" height="907" alt="Screenshot 2026-10-26 170100" src="https://github.com/user-attachments/assets/53706aa5-6864-436c-bfd5-9623e82a4fa6" />
+  Kndisi Akhir
+  <img width="553" height="911" alt="Screenshot 2026-10-26 170130" src="https://github.com/user-attachments/assets/8b3e6f02-d7e4-4e7c-8a34-6cb05c9f9f14" />
+
   
 
