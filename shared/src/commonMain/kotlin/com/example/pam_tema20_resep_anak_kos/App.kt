@@ -7,7 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.example.pam_tema20_resep_anak_kos.UI.LayarUtama
 import com.example.pam_tema20_resep_anak_kos.model.Resep
-import com.example.pam_tema20_resep_anak_kos.model.dataContoh
+import com.example.pam_tema20_resep_anak_kos.data.dataContoh
 import com.example.pam_tema20_resep_anak_kos.ui.FormResepScreen
 import com.example.pam_tema20_resep_anak_kos.data.ResepRepository
 import androidx.compose.runtime.collectAsState

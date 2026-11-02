@@ -1,7 +1,6 @@
 package com.example.pam_tema20_resep_anak_kos.data
 
 import com.example.pam_tema20_resep_anak_kos.model.Resep
-import com.example.pam_tema20_resep_anak_kos.model.dataContoh
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
