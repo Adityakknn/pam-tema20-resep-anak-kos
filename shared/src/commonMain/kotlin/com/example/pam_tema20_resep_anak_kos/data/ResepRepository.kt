@@ -5,6 +5,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 object ResepRepository {
     // dataContoh dipakai sebagai data awal
@@ -16,4 +18,7 @@ object ResepRepository {
     }
 
     fun idBerikutnya(): Int = (_daftar.value.maxOfOrNull { it.id } ?: 0) + 1
+    
+    fun pantau(id: Int): Flow<Resep?> =
+        daftar.map { list -> list.find { it.id == id } }
 }

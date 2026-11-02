@@ -1,6 +1,7 @@
 package com.example.pam_tema20_resep_anak_kos.UI
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Scaffold
@@ -17,12 +18,14 @@ import com.example.pam_tema20_resep_anak_kos.model.StatusResep
 @Composable
 fun LayarUtama(
     semua: List<Resep> = emptyList(),
+    bukaDetail: (Resep) -> Unit = {},
     onTambahClick: () -> Unit = {}
 ) {
     val tercepat = semua.sortedBy { it.durasiMenit }
     val jumlahFavorit = semua.count { it.status is StatusResep.Favorit }
 
     Scaffold(
+        contentWindowInsets = WindowInsets(0.dp, 0.dp, 0.dp, 0.dp),
         floatingActionButton = {
             FloatingActionButton(onClick = onTambahClick) {
                 Text("+")
@@ -45,9 +48,7 @@ fun LayarUtama(
 
             DaftarResep(
                 semua = tercepat,
-                onPilih = { resep ->
-                    println("Dipilih #${resep.id} ${resep.nama}")
-                },
+                onPilih = { resep -> bukaDetail(resep.id) },
                 modifier = Modifier.weight(1f)
             )
         }

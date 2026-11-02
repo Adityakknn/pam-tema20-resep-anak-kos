@@ -23,12 +23,13 @@ class FormResepViewModel : ViewModel() {
     fun ubahBahan(v: String) = _uiState.update { it.copy(bahanTeks = v) }
     fun ubahAlat(v: String) = _uiState.update { it.copy(alatTeks = v) }
 
-    fun simpanResep(onSelesai: () -> Unit = {}) {
-        val s = _uiState.value
-        if (!s.bisaSimpan) return
+    fun simpanResep(onSelesai: (Int) -> Unit = {}) {      
+    val s = _uiState.value
+    if (!s.bisaSimpan) return
 
-        val resepBaru = Resep(
-            id = ResepRepository.idBerikutnya(),
+    val idBaru = ResepRepository.idBerikutnya()        
+    val resepBaru = Resep(
+            id = idBaru,
             nama = s.nama.trim(),
             deskripsi = s.deskripsi.trim(),
             durasiMenit = s.durasiMenit.toInt(),
@@ -37,12 +38,11 @@ class FormResepViewModel : ViewModel() {
             status = StatusResep.BelumDicoba,
             daftarBahan = parseBahan(s.bahanTeks),
             daftarAlat = parseAlat(s.alatTeks)
-        )
-
-        ResepRepository.tambah(resepBaru)
-        _uiState.value = FormResepUiState()   // reset form
-        onSelesai()
-    }
+    )
+    ResepRepository.tambah(resepBaru)
+    _uiState.value = FormResepUiState()
+    onSelesai(idBaru)                                 
+}
 
     private fun parseBahan(teks: String): List<Bahan> =
         teks.lines()

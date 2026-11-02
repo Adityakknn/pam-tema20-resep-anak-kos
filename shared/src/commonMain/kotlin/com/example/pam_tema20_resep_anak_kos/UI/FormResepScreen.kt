@@ -21,6 +21,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @Composable
 fun FormResepScreen(
     onKembali: () -> Unit = {},
+    onSimpan: (Int) -> Unit = {},                      
     vm: FormResepViewModel = viewModel { FormResepViewModel() }
 ) {
     val state by vm.uiState.collectAsState()
@@ -90,7 +91,7 @@ fun FormResepScreen(
         Spacer(Modifier.height(16.dp))
 
         Button(
-            onClick = { vm.simpanResep(onSelesai = onKembali) },
+            onClick = { vm.simpanResep(onSelesai = onSimpan) },
             enabled = state.bisaSimpan,
             modifier = Modifier.fillMaxWidth()
         ) {

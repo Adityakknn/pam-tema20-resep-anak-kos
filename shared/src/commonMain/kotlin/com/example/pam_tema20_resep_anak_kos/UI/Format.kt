@@ -1,4 +1,4 @@
-package com.example.pam_tema20_resep_anak_kos.UI
+package com.example.pam_tema20_resep_anak_kos.ui
 
 
 fun formatRupiah(nilai: Int): String {
