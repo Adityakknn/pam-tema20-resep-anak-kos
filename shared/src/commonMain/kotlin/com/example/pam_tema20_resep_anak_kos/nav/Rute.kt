@@ -6,3 +6,4 @@ import kotlinx.serialization.Serializable
 @Serializable data class RuteDetail(val id: Int)
 @Serializable object RuteForm
 @Serializable object RuteProfil
+@Serializable object RuteAsisten

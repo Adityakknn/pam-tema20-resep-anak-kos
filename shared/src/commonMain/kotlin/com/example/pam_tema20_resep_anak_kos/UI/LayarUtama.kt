@@ -1,4 +1,4 @@
-package com.example.pam_tema20_resep_anak_kos.UI
+package com.example.pam_tema20_resep_anak_kos.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -18,7 +18,7 @@ import com.example.pam_tema20_resep_anak_kos.model.StatusResep
 @Composable
 fun LayarUtama(
     semua: List<Resep> = emptyList(),
-    bukaDetail: (Resep) -> Unit = {},
+    bukaDetail: (Int) -> Unit = {},
     onTambahClick: () -> Unit = {}
 ) {
     val tercepat = semua.sortedBy { it.durasiMenit }

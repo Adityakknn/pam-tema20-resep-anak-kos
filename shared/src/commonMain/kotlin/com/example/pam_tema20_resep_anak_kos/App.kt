@@ -88,6 +88,7 @@ fun App() {
             }
 
             composable<RuteProfil> { LayarProfil() }
+            composable<RuteAsisten> { LayarAsisten() }
         }
     }
 }
