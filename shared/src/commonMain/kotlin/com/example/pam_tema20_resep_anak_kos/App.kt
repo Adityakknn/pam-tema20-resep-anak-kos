@@ -19,7 +19,6 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.pam_tema20_resep_anak_kos.data.ResepRepository
 import com.example.pam_tema20_resep_anak_kos.nav.DAFTAR_TAB
-import com.example.pam_tema20_resep_anak_kos.nav.RuteAsisten
 import com.example.pam_tema20_resep_anak_kos.nav.RuteBeranda
 import com.example.pam_tema20_resep_anak_kos.nav.RuteDetail
 import com.example.pam_tema20_resep_anak_kos.nav.RuteForm
@@ -27,7 +26,6 @@ import com.example.pam_tema20_resep_anak_kos.nav.RuteProfil
 import com.example.pam_tema20_resep_anak_kos.nav.pindahTab
 import com.example.pam_tema20_resep_anak_kos.ui.DetailViewModel
 import com.example.pam_tema20_resep_anak_kos.ui.FormResepScreen
-import com.example.pam_tema20_resep_anak_kos.ui.LayarAsisten
 import com.example.pam_tema20_resep_anak_kos.ui.LayarDetail
 import com.example.pam_tema20_resep_anak_kos.ui.LayarProfil
 import com.example.pam_tema20_resep_anak_kos.ui.LayarUtama
@@ -39,7 +37,7 @@ fun App() {
 
     val entry by nav.currentBackStackEntryAsState()
     val tujuan = entry?.destination
-    // Menu bawah hanya tampil di 3 tab utama, tidak di Detail dan Form
+    
     val tampilMenuBawah = DAFTAR_TAB.any { tujuan?.hasRoute(it.rute::class) == true }
 
     Scaffold(
@@ -88,7 +86,7 @@ fun App() {
             }
 
             composable<RuteProfil> { LayarProfil() }
-            composable<RuteAsisten> { LayarAsisten() }
+
         }
     }
 }

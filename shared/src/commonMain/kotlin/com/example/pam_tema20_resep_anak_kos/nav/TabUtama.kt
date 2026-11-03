@@ -14,6 +14,5 @@ data class TabUtama(
 
 val DAFTAR_TAB = listOf(
     TabUtama(RuteBeranda, "Beranda", Icons.Default.Home),
-    TabUtama(RuteAsisten, "Asisten", Icons.Default.Face),
     TabUtama(RuteProfil, "Profil", Icons.Default.Person)
 )
